@@ -1,0 +1,33 @@
+.bar-chart-container {
+  max-height: 50%;
+  height: 100%;
+  padding: 1rem;
+  margin: 0 0 0 0.8rem;
+  border-radius: 20px;
+  border: 1px solid var(--primary);
+}
+
+.bar-chart-container header {
+  height: 15%;
+}
+
+.bar-chart-header {
+  display: flex;
+  gap: 2rem;
+}
+
+.bar-chart-header select {
+  background: transparent;
+  border: none;
+}
+
+.bar-chart-radio-group {
+  display: flex;
+
+  gap: 0.8rem;
+}
+
+.bar-chart {
+  margin-top: 2rem;
+  width: 300px;
+}

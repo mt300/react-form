@@ -1,0 +1,56 @@
+.sidebar-container {
+  width: 256px;
+  height: 520px;
+  background: var(--primary);
+  border-radius: 20px;
+
+  padding-top: 4.75rem;
+}
+
+.menu {
+  font-size: 1.1rem;
+  color: var(--light);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  list-style-type: none;
+}
+
+.first-menu-list {
+  padding-left: 1.25rem;
+}
+
+ul:nth-child(2) {
+  margin: 20px 0;
+}
+
+.divider {
+  margin-top: 13.0625rem;
+  width: 75px;
+  border-color: var(--light);
+
+  align-self: center;
+}
+.second-menu-list {
+  padding-left: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.icon {
+  margin-right: 0.625rem;
+}
+
+.menu-line {
+  display: flex;
+  align-items: center;  
+}
+
+a:hover {
+  color: var(--light-plus)
+}
+
+.activeLink {
+  color: var(--secondary);
+}

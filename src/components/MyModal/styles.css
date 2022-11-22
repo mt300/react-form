@@ -1,0 +1,75 @@
+.modal-overlay {
+  max-width: 850px;
+  border-radius: 8px;
+  width: 100%;
+  padding: 1rem;
+  position: absolute;
+  top: 130px;
+  right: 180px;
+  background: var(--primary);
+}
+
+.modal {
+  width: 100%;
+  color: white;
+
+  padding: 1rem 1rem 0 1rem;
+}
+
+.modal h2 {
+  margin-bottom: 2.5rem;
+}
+
+.modal-first-row, .modal-second-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 1.2rem;
+}
+
+.modal-input-container input {
+  width: 300px;
+  height: 2rem;
+  border-radius: 6px;
+  margin-left: 0.4rem;
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+}
+
+#name {
+  margin-left: 1.62rem;
+}
+
+.buttons-container {
+  padding: 6.8rem 0 1.2rem 0;
+  width: 100%;
+  border: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.4rem;
+}
+
+.buttons-container button {
+  width: 140px;
+  height: 2rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 6px;
+  color: var(--primary);
+  background: white;
+}
+
+.x-button {
+  position: absolute;
+  border: none;
+  background: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  top: 10px;
+  right: 20px;
+  padding-bottom: 2px;
+}

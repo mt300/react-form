@@ -1,0 +1,132 @@
+.management-table-container {
+  width: 1094px;
+
+  border: 1px solid var(--primary);
+  background: transparent;
+
+  padding: 2.5rem 1.625rem 1.5625rem 4.1875rem;
+  border-radius: 1.25rem;
+}
+
+.management-table-container h2 {
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.management-table-container button {
+  width: 83px;
+  height: 34px;
+  background: var(--primary);
+  color: var(--light);
+  border: none;
+
+  font-size: 0.85rem;
+  font-weight: bold;
+
+  border-radius: 7px;
+}
+
+.management-table-container header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.management-table-container header button {
+  width: 106px;
+  height: 40px;
+
+  padding: 0.2rem;
+
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.pagination-container {
+  font-weight: bold;
+}
+
+.pagination-container button {
+  width: 30px;
+  height: 30px;
+}
+
+.table-container-user, .table-container-real-state {
+  height: 350px;
+  margin-top: 0.8rem;
+}
+
+.table-container-user table, .table-container-real-state table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.table-container-user tr, 
+.table-container-real-state tr  {
+  border-bottom: 1px solid var(--primary);
+}
+
+.table-container-user th, td,
+.table-container-real-state th, td {
+  padding: 0.7rem 0;
+}
+
+.table-container-user th, 
+.table-container-real-state th { font-weight: normal; width: 20%; }
+
+.table-container-user td, 
+.table-container-real-state td { font-weight: bold; width: 20%;}
+
+.table-container-user th:first-child, td:first-child,
+.table-container-real-state th:first-child, td:first-child {
+  width: 5%;
+}
+
+.table-container-user .user-email {
+  width: 35%;
+}
+
+.table-container-real-state .real-state-id {
+  width: 5%;
+}
+
+.table-container-real-state .real-state-category {
+  width: 15%;
+}
+
+.table-container-real-state .real-state-value {
+  text-align: center;
+}
+
+.edit span {
+  display: flex;
+  justify-content: center;
+}
+
+.edit button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.trash-icon {
+  width: 24px;
+  height: 24px;
+
+  color: var(--primary);
+}
+
+.pagination-container {
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  
+  
+  margin-top: 0.5rem;
+}
+
+.pagination-button-group {
+  width: 17%;
+}

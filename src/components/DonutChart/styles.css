@@ -1,0 +1,30 @@
+.donut-chart-container {
+  max-height: 48.5%;
+  height: 100%;
+  padding: 1rem;
+  margin: 0 0 0 0.8rem;
+  border-radius: 20px;
+  border: 1px solid var(--primary);
+}
+
+.donut-chart-header {
+  display: flex;
+  gap: 2rem;
+}
+
+.donut-chart-header select {
+  margin-top: 0.8rem;
+  background: transparent;
+  border: none;
+}
+
+.donut-chart-main {
+  display: flex;
+  justify-content: space-around;
+}
+
+.donut-chart {
+  margin-top: 0.6rem;
+  width: 140px !important;
+  height: 140px !important;
+}
