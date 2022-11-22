@@ -77,7 +77,7 @@ export function ManagementTable({
     <div className="management-table-container">
       <header>
         <h2>{title}</h2>
-        <MyModal title={entityType === "user"?"Criar usuário":"Cadastrar Imóvel"} users={entityType === "user"?users:undefined} setUserFactory={entityType === "user"?setUserFactory:setRealStateFactory} />
+        <MyModal title={entityType === "user"?"Criar usuário":"Cadastrar Imóvel"} users={users} realStates={entityType !== "user"?realStates:undefined} setUserFactory={setUserFactory} setRealStatesFactory={setRealStateFactory} entityType={entityType}/>
       </header>
       <div
         className={

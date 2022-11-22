@@ -3,16 +3,15 @@
   border-radius: 8px;
   width: 100%;
   padding: 1rem;
-  position: absolute;
-  top: 130px;
-  right: 180px;
+  position: fixed;
+  top: 22vh;
+  left: 32vw;
   background: var(--primary);
 }
 
 .modal {
   width: 100%;
   color: white;
-
   padding: 1rem 1rem 0 1rem;
 }
 

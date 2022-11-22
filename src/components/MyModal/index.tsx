@@ -22,11 +22,11 @@ type User = {
 };
 
 type RealState = {
-  id: number;
+  id?: string;
   category: string;
   description: string;
   address: string;
-  value: number;
+  value: string;
 };
 
 export type UserFactory = {
@@ -37,13 +37,19 @@ export type RealStateFactory = {
   realStates: RealState[] | undefined;
 }
 
-export function MyModal({ title, users, setUserFactory }: MyModalProps) {
+export function MyModal({ title, users, setUserFactory, realStates, setRealStatesFactory,entityType}: MyModalProps) {
   let subtitle;
   const [modalIsOpen, setIsOpen] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
 
+
+  const [category, setCategory] = useState("");
+  const [description, setDescription] = useState("");
+  const [address, setAddress] = useState("");
+  const [value, setValue] = useState("");
+  
   function openModal() {
     setIsOpen(true);
   }
@@ -59,19 +65,36 @@ export function MyModal({ title, users, setUserFactory }: MyModalProps) {
       setName(value);
     } else if (type === 'email') {
       setEmail(value);
-    } else {
+    } else if (type === 'phone'){
       setPhone(value);
+    } else if (type === 'category'){
+      setCategory(value);
+    } else if (type === 'description'){
+      setDescription(value);
+    } else if (type === 'address'){
+      setAddress(value);
+    } else {
+      setValue(value);
     }
   }
 
-  function handleCreate(e: any, users: User[] | undefined, setUserFactory: Dispatch<SetStateAction<UserFactory>>) {
+  function handleCreateUsers(e: any, users: User[] | undefined, setUserFactory: Dispatch<SetStateAction<UserFactory>>) {
     e.preventDefault();
 
     const newUser: User = { id: "6", name, email, phone };
     const usersPlusNew = users;
     usersPlusNew?.push(newUser);
-    setUserFactory(usersPlusNew);
-    console.log(typeof(users))
+    setUserFactory({users:usersPlusNew});
+    // console.log(typeof(users))
+  }
+  function handleCreateStates(e: any, realStates: RealState[] | undefined, setRealStatesFactory: Dispatch<SetStateAction<RealStateFactory>>) {
+    e.preventDefault();
+
+    const newRealState: RealState = { id: "5", category, description, address, value };
+    const realStatePlusNew = realStates;
+    realStatePlusNew?.push(newRealState);
+    setRealStatesFactory({realStates:realStatePlusNew});
+    console.log(entityType)
   }
 
   return (
@@ -84,9 +107,11 @@ export function MyModal({ title, users, setUserFactory }: MyModalProps) {
         onRequestClose={closeModal}
         contentLabel={title}
       >
+        { entityType === "user" ? (
+        <>
         <h2 ref={(_subtitle) => (subtitle = _subtitle)}>{title}</h2>
         <button className="x-button" onClick={closeModal}><span>x</span></button>
-        <form onSubmit={(e) => handleCreate(e, users, setUserFactory)}>Create
+        <form onSubmit={(e) => handleCreateUsers(e, users, setUserFactory)}>Create
           <div className="modal-first-row">
             <div className="modal-input-container">
               <label htmlFor="name">Nome:</label>
@@ -99,8 +124,8 @@ export function MyModal({ title, users, setUserFactory }: MyModalProps) {
           </div>
           <div className="modal-second-row">
             <div className="modal-input-container">
-              <label htmlFor="telefone">Telefone:</label>
-              <input type="text" id="telefone" name="telefone" value={phone} onChange={updateState} />
+              <label htmlFor="phone">Telefone:</label>
+              <input type="text" id="phone" name="phone" value={phone} onChange={updateState} />
             </div>
           </div>
           <div className="buttons-container">
@@ -109,6 +134,40 @@ export function MyModal({ title, users, setUserFactory }: MyModalProps) {
           </div>
 
         </form>
+        </>
+        ):(
+        <>
+        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>{title}</h2>
+        <button className="x-button" onClick={closeModal}><span>x</span></button>
+        <form onSubmit={(e) => handleCreateStates(e, realStates, setRealStatesFactory)}>Create
+          <div className="modal-first-row">
+            <div className="modal-input-container">
+              <label htmlFor="name">Categoria:</label>
+              <input type="text" id="category" name="category" value={category} onChange={updateState} />
+            </div>
+            <div className="modal-input-container">
+              <label htmlFor="name">Descrição:</label>
+              <input type="text" id="description" name="description" value={description} onChange={updateState} />
+            </div>
+          </div>
+          <div className="modal-second-row">
+            <div className="modal-input-container">
+              <label htmlFor="name">Endereço:</label>
+              <input type="text" id="address" name="address" value={address} onChange={updateState} />
+            </div>
+            <div className="modal-input-container">
+              <label htmlFor="name">Valor:</label>
+              <input type="text" id="value" name="value" value={value} onChange={updateState} />
+            </div>
+          </div>
+          <div className="buttons-container">
+            <button type="submit">Salvar</button>
+            <button onClick={closeModal} type="button">Cancelar</button>
+          </div>
+
+        </form>
+        </>
+        )}
       </Modal>
     </div >
   )
